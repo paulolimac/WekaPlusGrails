@@ -47,12 +47,15 @@
 						<td>${fieldValue(bean: labelerInstance, field: "description")}</td>
 					
 						<td>${fieldValue(bean: labelerInstance, field: "typeInput")}</td>
+						
+						<td><g:link action="downloadFileUnlabeledArff" id="${labelerInstance.id}"> ${labelerInstance?.unlabeledArffFilename} </g:link></td>
+						
+						<td><g:link action="downloadFileUnlabeledTextField" id="${labelerInstance.id}"> ${labelerInstance?.unlabeledTextFieldFilename} </g:link></td>
 					
-						<td>${fieldValue(bean: labelerInstance, field: "unlabeledArffFilename")}</td>
-					
-						<td>${fieldValue(bean: labelerInstance, field: "unlabeledTextFieldFilename")}</td>
-					
-						<td>${fieldValue(bean: labelerInstance, field: "labeledArffFilename")}</td>
+						<%--<td>${fieldValue(bean: labelerInstance, field: "labeledArffFilename")}</td>--%>
+						
+						<td><g:link action="downloadFileLabeledArff" id="${labelerInstance.id}">${fieldValue(bean: labelerInstance, field: "labeledArffFilename")}</g:link></td>
+						
 					
 					</tr>
 				</g:each>

@@ -27,7 +27,7 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form method="post" >
+			<g:form method="post"  enctype="multipart/form-data">
 				<g:hiddenField name="id" value="${labelerInstance?.id}" />
 				<g:hiddenField name="version" value="${labelerInstance?.version}" />
 				<fieldset class="form">

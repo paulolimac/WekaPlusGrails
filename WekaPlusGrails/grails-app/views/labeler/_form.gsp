@@ -26,6 +26,7 @@
 	<g:select name="typeInput" from="${labelerInstance.constraints.typeInput.inList}" required="" value="${labelerInstance?.typeInput}" valueMessagePrefix="labeler.typeInput"/>
 </div>
 
+<%--
 <div class="fieldcontain ${hasErrors(bean: labelerInstance, field: 'unlabeledArffFilename', 'error')} ">
 	<label for="unlabeledArffFilename">
 		<g:message code="labeler.unlabeledArffFilename.label" default="Unlabeled Arff Filename" />
@@ -33,6 +34,15 @@
 	</label>
 	<g:textField name="unlabeledArffFilename" value="${labelerInstance?.unlabeledArffFilename}"/>
 </div>
+--%>
+
+<div class="fieldcontain ${hasErrors(bean: labelerInstance, field: 'unlabeledArffFilename', 'error')}">
+	<label for="unlabeledArffFilename">
+		<g:message code="labeler.unlabeledArffFilename.label" default="Unlabeled Arff Filename" />
+	</label>
+	<input type="file" id="unlabeledArffFilename" name="unlabeledArffFilename" />
+</div>
+
 
 <div class="fieldcontain ${hasErrors(bean: labelerInstance, field: 'unlabeledTextFieldFilename', 'error')} ">
 	<label for="unlabeledTextFieldFilename">
@@ -42,6 +52,7 @@
 	<g:textArea name="unlabeledTextFieldFilename" cols="40" rows="5" maxlength="10000" value="${labelerInstance?.unlabeledTextFieldFilename}"/>
 </div>
 
+<%--
 <div class="fieldcontain ${hasErrors(bean: labelerInstance, field: 'labeledArffFilename', 'error')} ">
 	<label for="labeledArffFilename">
 		<g:message code="labeler.labeledArffFilename.label" default="Labeled Arff Filename" />
@@ -49,12 +60,17 @@
 	</label>
 	<g:textField name="labeledArffFilename" value="${labelerInstance?.labeledArffFilename}"/>
 </div>
+--%>
+
+<div class="fieldcontain ${hasErrors(bean: labelerInstance, field: 'labeledArffFilename', 'error')} ">
+	<g:hiddenField name="labeledArffFilename" value="${labelerInstance?.labeledArffFilename}" />
+</div>
 
 <div class="fieldcontain ${hasErrors(bean: labelerInstance, field: 'classifier', 'error')} required">
 	<label for="classifier">
 		<g:message code="labeler.classifier.label" default="Classifier" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="classifier" name="classifier.id" from="${wekaPlusGrails.Classifier.list()}" optionKey="id" required="" value="${labelerInstance?.classifier?.id}" class="many-to-one"/>
+	<g:select id="classifier" name="classifier.id" from="${ekzemploDeWekaEnGrails.Classifier.list()}" optionKey="id" required="" value="${labelerInstance?.classifier?.id}" class="many-to-one"/>
 </div>
 

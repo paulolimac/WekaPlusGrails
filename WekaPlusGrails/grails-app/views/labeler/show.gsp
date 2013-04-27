@@ -54,7 +54,7 @@
 				<li class="fieldcontain">
 					<span id="unlabeledArffFilename-label" class="property-label"><g:message code="labeler.unlabeledArffFilename.label" default="Unlabeled Arff Filename" /></span>
 					
-						<span class="property-value" aria-labelledby="unlabeledArffFilename-label"><g:fieldValue bean="${labelerInstance}" field="unlabeledArffFilename"/></span>
+						<span class="property-value" aria-labelledby="unlabeledArffFilename-label"><g:link action="downloadFileUnlabeledArff" id="${labelerInstance.id}"><g:fieldValue bean="${labelerInstance}" field="unlabeledArffFilename"/></g:link></span>
 					
 				</li>
 				</g:if>
@@ -63,7 +63,7 @@
 				<li class="fieldcontain">
 					<span id="unlabeledTextFieldFilename-label" class="property-label"><g:message code="labeler.unlabeledTextFieldFilename.label" default="Unlabeled Text Field Filename" /></span>
 					
-						<span class="property-value" aria-labelledby="unlabeledTextFieldFilename-label"><g:fieldValue bean="${labelerInstance}" field="unlabeledTextFieldFilename"/></span>
+						<span class="property-value" aria-labelledby="unlabeledTextFieldFilename-label"><g:link action="downloadFileUnlabeledTextField" id="${labelerInstance.id}"><g:fieldValue bean="${labelerInstance}" field="unlabeledTextFieldFilename"/></g:link></span>
 					
 				</li>
 				</g:if>
@@ -72,7 +72,9 @@
 				<li class="fieldcontain">
 					<span id="labeledArffFilename-label" class="property-label"><g:message code="labeler.labeledArffFilename.label" default="Labeled Arff Filename" /></span>
 					
-						<span class="property-value" aria-labelledby="labeledArffFilename-label"><g:fieldValue bean="${labelerInstance}" field="labeledArffFilename"/></span>
+						<%--<span class="property-value" aria-labelledby="labeledArffFilename-label"><g:fieldValue bean="${labelerInstance}" field="labeledArffFilename"/></span>--%>
+						
+						<span class="property-value" aria-labelledby="labeledArffFilename-label"><g:link action="downloadFileLabeledArff" id="${labelerInstance.id}"><g:fieldValue bean="${labelerInstance}" field="labeledArffFilename"/></g:link></span>
 					
 				</li>
 				</g:if>
@@ -85,6 +87,13 @@
 					
 				</li>
 				</g:if>
+			
+				<%--<g:if test="${labelerInstance?.tt}">
+				<li class="fieldcontain">
+					<span id="tt-label" class="property-label"><g:message code="labeler.tt.label" default="Tt" /></span>
+					
+				</li>
+				</g:if>--%>
 			
 			</ol>
 			<g:form>
