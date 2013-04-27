@@ -1,8 +1,8 @@
 package wekaPlusGrails
 
 class Classifier {
-
-    String name
+	
+	String name
 	String description
 	//byte[] fileOfClassifier
 	String filename
@@ -10,7 +10,7 @@ class Classifier {
 	String typeClassifier
 	TrainSample trainSample
 
-    static constraints = {
+	static constraints = {
 		name(unique:false, nullable:false, blank:false)
 		description(unique:false, nullable:false, blank:false, maxSize:500)
 		//fileOfClassifier(nullable:false, unique:false, blank:false, maxSize:1024 * 1024 * 1) //1mb
@@ -18,6 +18,6 @@ class Classifier {
 		modelTxt(nullable:true, blank: true)
 		typeClassifier(blank:false, inList: ["j48", "jrip", "part"])
 		trainSample(unique:false, nullable:false, blank:false)
-    }
-
+	}
+	
 }
