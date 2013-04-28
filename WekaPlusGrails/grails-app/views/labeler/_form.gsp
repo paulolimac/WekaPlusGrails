@@ -71,6 +71,6 @@
 		<g:message code="labeler.classifier.label" default="Classifier" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="classifier" name="classifier.id" from="${ekzemploDeWekaEnGrails.Classifier.list()}" optionKey="id" required="" value="${labelerInstance?.classifier?.id}" class="many-to-one"/>
+	<g:select id="classifier" name="classifier.id" from="${wekaPlusGrails.Classifier.list()}" optionKey="id" required="" value="${labelerInstance?.classifier?.id}" class="many-to-one"/>
 </div>
 

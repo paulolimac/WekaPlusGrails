@@ -60,6 +60,6 @@
 		<g:message code="classifier.trainSample.label" default="Train Sample" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="trainSample" name="trainSample.id" from="${ekzemploDeWekaEnGrails.TrainSample.list()}" optionKey="id" required="" value="${classifierInstance?.trainSample?.id}" class="many-to-one"/>
+	<g:select id="trainSample" name="trainSample.id" from="${wekaPlusGrails.TrainSample.list()}" optionKey="id" required="" value="${classifierInstance?.trainSample?.id}" class="many-to-one"/>
 </div>
 
